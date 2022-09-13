@@ -26,5 +26,6 @@ export const Text = styled('Text', {
   },
   defaultVariants: {
     variant: 'body',
+    color: 'white',
   },
 });

@@ -8,7 +8,7 @@ const login: React.FC = () => {
   return (
     <View>
       <Container>
-        <Text color={'white'}>Login</Text>
+        <Text>Login</Text>
       </Container>
     </View>
   );
