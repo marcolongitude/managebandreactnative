@@ -1,12 +1,15 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 
-// import { Container } from './styles';
+import { Container } from './styles';
+import { Text } from '../../components/Text';
 
 const login: React.FC = () => {
   return (
     <View>
-      <Text>Login</Text>
+      <Container>
+        <Text color={'white'}>Login</Text>
+      </Container>
     </View>
   );
 };
