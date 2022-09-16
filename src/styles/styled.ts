@@ -2,10 +2,10 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 import { StyleSheet } from 'react-native';
-import { getDeviceTypeAsync, DeviceType, getMaxMemoryAsync } from 'expo-device';
+import { getDeviceTypeAsync, DeviceType } from 'expo-device';
 import { createStitches } from 'stitches-native';
 import type * as Stitches from 'stitches-native';
-import { gray, blue, green, red, blackA } from '@radix-ui/colors';
+import { gray, blue, green, red, blackA, whiteA } from '@radix-ui/colors';
 
 import { size, shadow, typography, flexCenter, absoluteFill } from './utils';
 
@@ -32,45 +32,22 @@ getDeviceTypeAsync().then((deviceType) => {
   media.tablet = deviceType === DeviceType.TABLET;
 });
 
+console.log(gray);
+
 const { styled, css, createTheme, config, theme, useTheme, ThemeProvider } = createStitches({
   theme: {
     colors: {
-      ...blackA,
-      ...gray,
-      ...red,
-      ...green,
-      // Main palette (these should not be used directly but via aliases instead)
-      blue100: '#ab9cf7',
-      blue500: '#301b96',
-      blue900: '#0D0630',
-      green100: '#d9fff6',
-      green500: '#8BBEB2',
-      green900: '#384d48',
-      black: '#000000',
-      white: '#ffffff',
-      gray50: '#f2f2f7',
-      gray100: '#e5e5ea',
-      gray200: '#d1d1d6',
-      gray300: '#c7c7cc',
-      gray400: '#aeaeb2',
-      gray500: '#8e8e93',
-      gray600: '#636366',
-      gray700: '#48484a',
-      gray800: '#3a3a3c',
-      gray850: '#2c2c2e',
-      gray900: '#1d1d1f',
-
       //tipo de botoes
       save: '#FBBF24',
-      textTitle: '$gray700',
+      textTitle: '$gray7',
 
       // Brand colors
-      primary: '$blue500',
-      primaryText: '$blue900',
-      primaryMuted: '$blue100',
-      secondary: '$green500',
-      secondaryText: '$green900',
-      secondaryMuted: '$green100',
+      primary: blue.blue10,
+      primaryText: blue.blue12,
+      primaryMuted: blue.blue5,
+      secondary: green.green5,
+      secondaryText: green.green9,
+      secondaryMuted: green.green1,
 
       // Informative colors
       info: '#3B82F6',
@@ -87,19 +64,19 @@ const { styled, css, createTheme, config, theme, useTheme, ThemeProvider } = cre
       errorMuted: '#f3d2d3',
 
       // General colors
-      text: '$black',
-      textInverted: '$white',
+      text: blackA.blackA12,
+      textInverted: whiteA.whiteA2,
       border: 'rgba(150, 150, 150, 0.3)',
       backdrop: 'rgba(0,0,0,0.5)',
-      background: '$backgroundDark',
-      surface: '$white',
-      elevated: '$white',
-      muted1: '$gray500',
-      muted2: '$gray400',
-      muted3: '$gray300',
-      muted4: '$gray200',
-      muted5: '$gray100',
-      muted6: '$gray50',
+      background: blackA.blackA12,
+      surface: whiteA.whiteA2,
+      elevated: whiteA.whiteA3,
+      muted1: gray.gray5,
+      muted2: gray.gray4,
+      muted3: gray.gray3,
+      muted4: gray.gray2,
+      muted5: gray.gray1,
+      muted6: gray.gray5,
     },
     fontWeights: {
       bold: '700',
