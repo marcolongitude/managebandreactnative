@@ -32,7 +32,14 @@ getDeviceTypeAsync().then((deviceType) => {
   media.tablet = deviceType === DeviceType.TABLET;
 });
 
-console.log(gray);
+const radixColors = {
+  ...gray,
+  ...blackA,
+  ...whiteA,
+  ...blue,
+  ...green,
+  ...red,
+};
 
 const { styled, css, createTheme, config, theme, useTheme, ThemeProvider } = createStitches({
   theme: {
@@ -42,12 +49,12 @@ const { styled, css, createTheme, config, theme, useTheme, ThemeProvider } = cre
       textTitle: '$gray7',
 
       // Brand colors
-      primary: blue.blue10,
-      primaryText: blue.blue12,
-      primaryMuted: blue.blue5,
-      secondary: green.green5,
-      secondaryText: green.green9,
-      secondaryMuted: green.green1,
+      primary: radixColors.blue10,
+      primaryText: radixColors.blue12,
+      primaryMuted: radixColors.blue5,
+      secondary: radixColors.green5,
+      secondaryText: radixColors.green9,
+      secondaryMuted: radixColors.green1,
 
       // Informative colors
       info: '#3B82F6',
@@ -64,19 +71,19 @@ const { styled, css, createTheme, config, theme, useTheme, ThemeProvider } = cre
       errorMuted: '#f3d2d3',
 
       // General colors
-      text: blackA.blackA12,
-      textInverted: whiteA.whiteA2,
+      text: radixColors.blackA12,
+      textInverted: radixColors.whiteA2,
       border: 'rgba(150, 150, 150, 0.3)',
       backdrop: 'rgba(0,0,0,0.5)',
-      background: blackA.blackA12,
-      surface: whiteA.whiteA2,
-      elevated: whiteA.whiteA3,
-      muted1: gray.gray5,
-      muted2: gray.gray4,
-      muted3: gray.gray3,
-      muted4: gray.gray2,
-      muted5: gray.gray1,
-      muted6: gray.gray5,
+      background: radixColors.blackA12,
+      surface: radixColors.whiteA2,
+      elevated: radixColors.whiteA3,
+      muted1: radixColors.gray5,
+      muted2: radixColors.gray4,
+      muted3: radixColors.gray3,
+      muted4: radixColors.gray2,
+      muted5: radixColors.gray1,
+      muted6: radixColors.gray5,
     },
     fontWeights: {
       bold: '700',
