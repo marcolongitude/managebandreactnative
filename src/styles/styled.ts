@@ -1,36 +1,13 @@
 /* eslint-disable @typescript-eslint/no-floating-promises */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
-import { StyleSheet } from 'react-native';
-import { getDeviceTypeAsync, DeviceType } from 'expo-device';
-import { createStitches } from 'stitches-native';
-import type * as Stitches from 'stitches-native';
+// import { StyleSheet } from 'react-native';
+// import { getDeviceTypeAsync, DeviceType } from 'expo-device';
+import { createStitches } from '@stitches/react';
+import type * as Stitches from '@stitches/react';
 import { gray, blue, green, red, blackA, whiteA } from '@radix-ui/colors';
 
-import { size, shadow, typography, flexCenter, absoluteFill } from './utils';
-
-const media = {
-  phone: true,
-  tablet: false,
-
-  md: '(width >= 750px)',
-  lg: '(width >= 1080px)',
-  xl: '(width >= 1284px)',
-  xxl: '(width >= 1536px)',
-
-  /*
-  sm: '(width <= 750px)', // Small phone, eg. iPhone SE
-  md: '(750px < width <= 1080px)', // Regular phone, eg. iPhone 6/7/8 Plus
-  lg: '(1080px < width <= 1284px)', // Large phone, eg. iPhone 12 Pro Max
-  xl: '(1284px < width <= 1536px)', // Regular tablet, eg. iPad Pro 9.7
-  xxl: '(width > 1536px)', // Large tablet
-  */
-};
-
-getDeviceTypeAsync().then((deviceType) => {
-  media.phone = deviceType === DeviceType.PHONE;
-  media.tablet = deviceType === DeviceType.TABLET;
-});
+import { size, shadow, typography, flexCenter } from './utils';
 
 const radixColors = {
   ...gray,
@@ -41,7 +18,7 @@ const radixColors = {
   ...red,
 };
 
-const { styled, css, createTheme, config, theme, useTheme, ThemeProvider } = createStitches({
+const { styled, css, createTheme, config, theme } = createStitches({
   theme: {
     colors: {
       //tipo de botoes
@@ -94,7 +71,6 @@ const { styled, css, createTheme, config, theme, useTheme, ThemeProvider } = cre
       solid: 'solid',
     },
     borderWidths: {
-      thin: StyleSheet.hairlineWidth,
       normal: 1,
       thick: 2,
     },
@@ -137,7 +113,7 @@ const { styled, css, createTheme, config, theme, useTheme, ThemeProvider } = cre
       max: '$9' as const,
     },
     sizes: {
-      hairlineWidth: StyleSheet.hairlineWidth,
+      // hairlineWidth: StyleSheet.hairlineWidth,
     },
     radii: {
       sm: 4,
@@ -151,9 +127,7 @@ const { styled, css, createTheme, config, theme, useTheme, ThemeProvider } = cre
     shadow,
     typography,
     flexCenter,
-    absoluteFill,
   },
-  media,
 });
 
 const darkTheme = createTheme({
@@ -196,7 +170,7 @@ const darkTheme = createTheme({
   },
 });
 
-export { styled, css, createTheme, useTheme, config, theme, darkTheme, ThemeProvider };
+export { styled, css, createTheme, config, theme, darkTheme };
 
 export type CSS = Stitches.CSS<typeof config>;
 export type Theme = typeof theme;

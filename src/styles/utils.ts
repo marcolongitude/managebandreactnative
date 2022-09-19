@@ -1,6 +1,5 @@
 import { CSSProperties } from 'react';
-import { StyleSheet } from 'react-native';
-import type * as Stitches from 'stitches-native';
+import type * as Stitches from '@stitches/react';
 
 export type TypographyVariant =
   | 'body'
@@ -89,8 +88,4 @@ export const flexCenter = (value?: Stitches.PropertyValue<'flexDirection'>) => (
   flexDirection: value || 'column',
   justifyContent: 'center',
   alignItems: 'center',
-});
-
-export const absoluteFill = () => ({
-  ...StyleSheet.absoluteFillObject,
 });
