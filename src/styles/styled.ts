@@ -3,7 +3,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 // import { StyleSheet } from 'react-native';
 // import { getDeviceTypeAsync, DeviceType } from 'expo-device';
-import { createStitches } from '@stitches/react';
+import { createStitches, globalCss } from '@stitches/react';
 import type * as Stitches from '@stitches/react';
 import { gray, blue, green, red, blackA, whiteA } from '@radix-ui/colors';
 
@@ -170,7 +170,14 @@ const darkTheme = createTheme({
   },
 });
 
-export { styled, css, createTheme, config, theme, darkTheme };
+const globalStyles = globalCss({
+  '*': {
+    margin: 0,
+    padding: 0,
+  },
+});
+
+export { styled, css, createTheme, config, theme, darkTheme, globalStyles };
 
 export type CSS = Stitches.CSS<typeof config>;
 export type Theme = typeof theme;

@@ -1,3 +1,9 @@
+import { styled } from '../../styles';
+
+const TitleH1 = styled('h1', {
+  color: '$errorText',
+});
+
 export const Login = () => {
-  return <h1>LOgin</h1>;
+  return <TitleH1>LOgin</TitleH1>;
 };
