@@ -8,7 +8,7 @@ type Props = StyledButtonVariants & {
 
 export const ButtonUI = ({ children, ...props }: Props) => {
   return (
-    <StyledButton {...props} size={'large'}>
+    <StyledButton {...props} size={'large'} outlined>
       {children}
     </StyledButton>
   );

@@ -21,10 +21,6 @@ const radixColors = {
 const { styled, css, createTheme, config, theme } = createStitches({
   theme: {
     colors: {
-      //tipo de botoes
-      save: '#FBBF24',
-      textTitle: '$gray7',
-
       // Brand colors
       primary: radixColors.blue10,
       primaryText: radixColors.blue12,

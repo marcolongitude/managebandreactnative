@@ -1,18 +1,29 @@
 import { shadow, size } from '~/styles/utils';
 import { styled } from '../../../styles';
 
-console.log(shadow('small'));
 export const StyledButton = styled('button', {
   border: 'none',
   borderRadius: 12,
-  ...shadow('large'),
   variants: {
     typeButton: {
-      primary: {
+      save: {
         backgroundColor: '$primary',
+        '&:hover': {
+          backgroundColor: '$background',
+        },
       },
-      secondary: {
-        backgroundColor: '$secondary',
+      delete: {
+        backgroundColor: '$error',
+        '&:hover': {
+          backgroundColor: '$background',
+          ...shadow('medium'),
+        },
+      },
+    },
+    outlined: {
+      true: {
+        border: '1px solid',
+        borderColor: '$successText',
       },
     },
     size: {
