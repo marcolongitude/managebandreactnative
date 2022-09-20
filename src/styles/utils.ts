@@ -1,5 +1,6 @@
 import { CSSProperties } from 'react';
 import type * as Stitches from '@stitches/react';
+import { gray, blue, green, red, blackA, whiteA } from '@radix-ui/colors';
 
 export type TypographyVariant =
   | 'body'
@@ -46,10 +47,12 @@ export const typography = (value: TypographyVariantVar) => {
   return typographyVariants[value];
 };
 
-export const size = (value: Stitches.PropertyValue<'width'>) => ({
-  width: value,
-  height: value,
-});
+export const size = (value: any) => {
+  return {
+    width: value.width,
+    height: value.height,
+  };
+};
 
 export const shadow = (level: 'none' | 'small' | 'medium' | 'large') => {
   return {
@@ -61,25 +64,13 @@ export const shadow = (level: 'none' | 'small' | 'medium' | 'large') => {
       shadowColor: '#000',
     },
     small: {
-      elevation: 2,
-      shadowOffset: { width: 0, height: 1 },
-      shadowRadius: 3,
-      shadowOpacity: 0.1,
-      shadowColor: '#000',
+      boxShadow: `0 0 0 15px ${gray.gray3}`,
     },
     medium: {
-      elevation: 5,
-      shadowOffset: { width: 0, height: 3 },
-      shadowRadius: 6,
-      shadowOpacity: 0.2,
-      shadowColor: '#000',
+      boxShadow: `0 0 0 15px ${gray.gray5}`,
     },
     large: {
-      elevation: 10,
-      shadowOffset: { width: 0, height: 6 },
-      shadowRadius: 12,
-      shadowOpacity: 0.4,
-      shadowColor: '#000',
+      boxShadow: `0 0 0 15px ${gray.gray7}`,
     },
   }[level];
 };

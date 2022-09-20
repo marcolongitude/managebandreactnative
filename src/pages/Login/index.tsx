@@ -1,9 +1,11 @@
-import { styled } from '../../styles';
-
-const TitleH1 = styled('h1', {
-  color: '$errorText',
-});
+import { ButtonUI } from '~/components/atoms/Button';
 
 export const Login = () => {
-  return <TitleH1>LOgin</TitleH1>;
+  return (
+    <div>
+      <ButtonUI typeButton={'primary'} size={'small'}>
+        Text botão
+      </ButtonUI>
+    </div>
+  );
 };

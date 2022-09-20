@@ -69,6 +69,7 @@ const { styled, css, createTheme, config, theme } = createStitches({
     },
     borderStyles: {
       solid: 'solid',
+      noneBorder: 'none',
     },
     borderWidths: {
       normal: 1,
